@@ -9,8 +9,8 @@ from requests_aws4auth import AWS4Auth
 from opensearchpy import OpenSearch, RequestsHttpConnection
 from dateutil.tz import tzutc
 
-logger = logging.getLogger()
-logger.setLevel(logging.DEBUG)
+# logger = logging.getLogger()
+# logger.setLevel(logging.DEBUG)
 
 # --------------- Helper Functions -----------------------------
 
@@ -27,6 +27,7 @@ def detect_labels(bucket, key):
               "Make sure your object and bucket exist and your bucket is in the same region as this function.")
         raise e
     labels = [label_prediction['Name'].lower() for label_prediction in response['Labels']]
+    print(labels)
     return labels
 
 
