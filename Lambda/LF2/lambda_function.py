@@ -33,7 +33,10 @@ def lambda_handler(event, context):
         "statusCode": 200,
         "body": json.dumps(output),
         "headers": {
-            "content-type": "application/json"
+            "content-type": "application/json",
+            "Access-Control-Allow-Headers": "*",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "OPTIONS,POST,GET"
         }
     }
 
