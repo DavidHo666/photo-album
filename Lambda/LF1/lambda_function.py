@@ -47,6 +47,7 @@ def get_labels_and_created_time(bucket, key):
     if ('x-amz-meta-customlabels' in image_metadata['ResponseMetadata']['HTTPHeaders'] and
             image_metadata['ResponseMetadata']['HTTPHeaders']['x-amz-meta-customlabels']):
         custom_lables = image_metadata['ResponseMetadata']['HTTPHeaders']['x-amz-meta-customlabels'].split(',')
+        custom_lables = [lable.strip() for lable in custom_lables]
     else:
         custom_lables = []
     created_time = image_metadata['LastModified']
