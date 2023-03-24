@@ -7,7 +7,7 @@ Resources:
     Properties:
       Handler: lambda_function.lambda_handler
       Runtime: python3.9
-      CodeUri: ./lambda/LF1
+      CodeUri: ./Lambda/LF1
       MemorySize: 128
       Timeout: 15
       Role: 'arn:aws:iam::267524565890:role/service-role/LF1-photo-role'
@@ -19,7 +19,7 @@ Resources:
     Properties:
       Handler: lambda_function.lambda_handler
       Runtime: python3.9
-      CodeUri: ./lambda/LF2
+      CodeUri: ./Lambda/LF2
       MemorySize: 128
       Timeout: 15
       Role: 'arn:aws:iam::267524565890:role/service-role/LF2-photo-role-5viitgn2'
