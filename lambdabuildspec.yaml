@@ -5,7 +5,7 @@ phases:
       python: 3.9
   build:
     commands:
-      - aws cloudformation package --template-file lambdatemplate.yaml --s3-bucket photo-album-pipeline --output-template-file outputtemplate.yaml
+      - aws cloudformation package --template-file lambdatemplate.yaml --s3-bucket photo-album-pipeline --output-template-file lambdaoutputtemplate.yaml
 artifacts:
   type: zip
   files:
