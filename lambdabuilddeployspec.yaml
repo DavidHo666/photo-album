@@ -10,6 +10,7 @@ phases:
   post_build:
     commands:
       - echo "Updating lambda Function..."
+      - cd ../..
       - aws lambda update-function-code --function-name LF1-photo --zip-file fileb://deployment_package_LF1.zip
       - aws lambda update-function-code --function-name LF2-photo --zip-file fileb://deployment_package_LF2.zip
       - echo "DONE!!"
