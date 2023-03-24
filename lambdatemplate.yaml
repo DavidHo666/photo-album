@@ -2,7 +2,7 @@ AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: deploy lambda
 Resources:
-  LF1-photo:
+  LF1PhotoPipeline:
     Type: AWS::Serverless::Function
     Properties:
       Handler: lambda_function.lambda_handler
@@ -14,7 +14,7 @@ Resources:
       Environment:
         Variables:
           REGION: us-east-1
-  LF2-photo:
+  LF2PhotoPipeline:
     Type: AWS::Serverless::Function
     Properties:
       Handler: lambda_function.lambda_handler
