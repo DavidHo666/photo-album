@@ -6,7 +6,6 @@ phases:
   build:
     commands:
       - aws cloudformation package --template-file lambdatemplate.yaml --s3-bucket photo-album-pipeline --output-template-file lambdaoutputtemplate.yaml
-      - aws cloudformation deploy --template-file lambdaoutputtemplate.yaml --stack-name LambdaPipeline-stack --capabilities CAPABILITY_IAM
 artifacts:
   type: zip
   files:
