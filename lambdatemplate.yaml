@@ -5,6 +5,7 @@ Resources:
   LF1PhotoPipeline:
     Type: AWS::Serverless::Function
     Properties:
+      FunctionName: LF1-photo
       Handler: lambda_function.lambda_handler
       Runtime: python3.9
       CodeUri: ./Lambda/LF1
@@ -17,6 +18,7 @@ Resources:
   LF2PhotoPipeline:
     Type: AWS::Serverless::Function
     Properties:
+      FunctionName: LF2-photo
       Handler: lambda_function.lambda_handler
       Runtime: python3.9
       CodeUri: ./Lambda/LF2
