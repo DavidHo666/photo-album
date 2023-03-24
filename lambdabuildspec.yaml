@@ -1,0 +1,13 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      python: 3.9
+  build:
+    commands:
+      - aws cloudformation package --template-file lambdatemplate.yaml --s3-bucket photo-album-pipeline --output-template-file outputtemplate.yaml
+artifacts:
+  type: zip
+  files:
+    - lambdatemplate.yaml
+    - lambdaoutputtemplate.yaml

@@ -1,0 +1,28 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: deploy lambda
+Resources:
+  LF1:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: lambda_function.lambda_handler
+      Runtime: python3.9
+      CodeUri: ./lambda/LF1
+      MemorySize: 128
+      Timeout: 15
+      Role: 'arn:aws:iam::267524565890:role/service-role/LF1-photo-role'
+      Environment:
+        Variables:
+          REGION: us-east-1
+  LF2:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: lambda_function.lambda_handler
+      Runtime: python3.9
+      CodeUri: ./lambda/LF2
+      MemorySize: 128
+      Timeout: 15
+      Role: 'arn:aws:iam::267524565890:role/service-role/LF2-photo-role-5viitgn2'
+      Environment:
+        Variables:
+          REGION: us-east-1
