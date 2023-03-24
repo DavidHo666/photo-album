@@ -1,0 +1,15 @@
+version: 0.2
+phases:
+  build:
+    commands:
+      - echo "Zipping deployment package..."
+      - cd LF1
+      - zip -r ../deployment_package_LF1.zip .
+      - cd ../LF2
+      - zip -r ../deployment_package_LF2.zip .
+  post_build:
+    commands:
+      - echo "Updating lambda Function..."
+      - aws lambda update-function-code --function-name LF1-photo --zip-file fileb://deployment_package_LF1.zip
+      - aws lambda update-function-code --function-name LF2-photo --zip-file fileb://deployment_package_LF2.zip
+      - echo "DONE!!"
