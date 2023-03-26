@@ -57,8 +57,7 @@ def get_keywords_from_lex(query):
     lex = boto3.client('lexv2-runtime')
     lex_response = lex.recognize_text(
         botId='J3SHDSPF6A',  # MODIFY HERE
-        # botAliasId='MAUQZ0D8KP',  # version 2
-        botAliasId='TSTALIASID',  # draft version
+        botAliasId='RZW4CB7XO5',
         localeId='en_US',
         sessionId='test_session',
         text=query
